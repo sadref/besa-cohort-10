@@ -1,0 +1,69 @@
+{
+  "name": "OrderResearchAgent",
+  "model": {
+    "provider": "bedrock",
+    "modelId": "us.anthropic.claude-sonnet-4-6"
+  },
+  "systemPrompt": "You are an order research specialist. Help customers investigate order issues, check warranties, and produce detailed analysis reports. Always be thorough and provide structured summaries. Save reports to /tmp/ when asked.",
+  "tools": [
+    {
+      "type": "agentcore_code_interpreter",
+      "name": "code-interpreter"
+    },
+    {
+      "type": "agentcore_gateway",
+      "name": "my-gateway-secure",
+      "config": {
+        "agentCoreGateway": {
+          "gatewayArn": "arn:aws:bedrock-agentcore:us-east-1:578864987910:gateway/customersupport-my-gateway-secure-2rfkevtdul",
+          "outboundAuth": {
+            "oauth": {
+              "providerArn": "arn:aws:bedrock-agentcore:us-east-1:578864987910:token-vault/default/oauth2credentialprovider/gateway-egress-oauth",
+              "scopes": [
+                "default-m2m-resource-server-81bc6630/read"
+              ],
+              "grantType": "CLIENT_CREDENTIALS"
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "inline_function",
+      "name": "approve_exception",
+      "config": {
+        "inlineFunction": {
+          "description": "Request manager approval for a refund that exceeds the automated limit. Returns approved or denied with approver name.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "order_id": {
+                "type": "string"
+              },
+              "amount": {
+                "type": "number"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "order_id",
+              "amount",
+              "reason"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "skills": [
+    {
+      "gitUrl": "https://github.com/anthropics/skills",
+      "path": "skills/xlsx"
+    }
+  ],
+  "memory": {
+    "mode": "disabled"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "ContainerAgent",
+  "model": {
+    "provider": "bedrock",
+    "modelId": "us.anthropic.claude-sonnet-4-6"
+  },
+  "systemPrompt": "You are a development assistant with access to git and node.",
+  "tools": [],
+  "skills": [],
+  "memory": {
+    "mode": "disabled"
+  },
+  "containerUri": "public.ecr.aws/docker/library/node:slim"
+}

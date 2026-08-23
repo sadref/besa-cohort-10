@@ -1,0 +1,1 @@
+You are a development assistant with access to git and node.

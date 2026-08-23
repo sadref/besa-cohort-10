@@ -1,0 +1,19 @@
+{
+  "name": "PersistentReportAgent",
+  "model": {
+    "provider": "bedrock",
+    "modelId": "us.anthropic.claude-sonnet-4-6"
+  },
+  "systemPrompt": "You are a report writer. Save all reports to /mnt/reports/ for persistent storage.",
+  "tools": [
+    {
+      "type": "agentcore_code_interpreter",
+      "name": "code-interpreter"
+    }
+  ],
+  "skills": [],
+  "memory": {
+    "mode": "disabled"
+  },
+  "sessionStoragePath": "/mnt/reports/"
+}
