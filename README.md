@@ -22,6 +22,10 @@ week-05-evaluation-observability/
 week-06-ai-governance/
 ```
 
+## Workshop Guide
+
+- [AgentCore Getting Started](https://catalog.workshops.aws/agentcore-getting-started/en-US)
+
 ## Tech Stack
 
 - Amazon Bedrock AgentCore
