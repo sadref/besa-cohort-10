@@ -5,7 +5,7 @@
 | Week | Topic | Status |
 |------|-------|--------|
 | 1 | Anatomy of an AI Agent | Done |
-| 2 | Agentic AI with AWS Serverless | - |
+| 2 | Agentic AI with AWS Serverless | Done |
 | 3 | Production AI Agents on Amazon EKS | - |
 | 4 | Auth, Authorization & Logging | - |
 | 5 | Evaluation and Observability | - |
@@ -15,7 +15,7 @@
 
 ```
 week-01-anatomy-of-ai-agent/       # Customer Support Agent (Strands SDK, AgentCore, MCP)
-week-02-agentic-serverless/
+week-02-agentic-serverless/        # Travel Booking Workflow (Event-driven vs Workflow-managed)
 week-03-agents-on-eks/
 week-04-auth-and-logging/
 week-05-evaluation-observability/
